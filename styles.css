@@ -1,0 +1,130 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    background-color: #2B124C;
+}
+.container 
+{
+    width: 100%;
+    text-align: center;
+    min-height:100vh ; 
+}
+h2
+{
+    /* background-color: coral; */
+    position: relative;
+    color: #DFB6B2;
+    margin: 20px 10px;
+}
+h2::before
+{
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    content: '';
+    left: 50%;
+    background-color: #DFB6B2;
+    bottom: -10px;
+    transform: translate(-50%);
+    animation: animate 4s linear infinite;
+}
+@keyframes animate 
+{
+    0%
+    {
+        width: 100px;
+    }
+    50%
+    {
+        width: 200px;
+    }
+    100%
+    {
+        width: 100px;
+    }
+}
+.images-container
+{
+    /* background-color: darkcyan; */
+    padding: 10px 50px ;
+    margin: 20px auto ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* grid-template-columns: repeat(4 , 5fr); */
+    /* grid-gap: 20px 40px; */
+}
+.photo 
+{
+    /* background-color: cornflowerblue; */
+    border-radius: 20px;
+    border: none;
+    /* box-shadow: 10px 5px 15px navy; */
+    overflow: hidden;
+    cursor: pointer;
+}
+.photo img 
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition:.2s linear;
+    /* border-image: fill 0 linear-gradient(#0003,navy) */
+    filter: grayscale(50%);
+
+}
+.photo img:hover 
+{
+    transform: scale(1.1);
+    filter: grayscale(0%);
+    
+}
+.popup-image 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:rgba(0, 0, 0, .8);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+    display: none;
+    align-content: space-evenly;
+    border-radius: 50px;
+}
+/* .popup-image:hover 
+{
+    /* background-color: coral; 
+    filter: drop-shadow(1px 1px 20px yellow); 
+    box-shadow: 0 0 30px #B58863;
+} */
+.popup-image img
+{
+    border-radius: 20px;
+    transform: scale(0.9);
+}
+.popup-image img:hover 
+{
+    transform: scale(1.1);
+    /* filter: grayscale(0%); */
+    filter: drop-shadow(1px 1px 20px #854F6C); 
+    
+}
+.popup-image span 
+{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 40px;
+    font-weight: bolder;
+    color: aliceblue;
+    cursor: pointer;
+    z-index: 50;
+}
